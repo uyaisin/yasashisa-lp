@@ -1,0 +1,9 @@
+codex.log
+preview-*.png
+.archive/
+bg/old/
+bg/*.sh
+bg/*.log
+line/
+navi.html
+copy.md

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>なぎ｜やりたかった形にする右腕</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#5f8a6b; --green-d:#4a6f55; --sage:#8fb39a; --gold:#b89a5a; --gold-l:#e3d5b0; --red:#b0604a;
+  --ink:#2e2d2a; --ink-l:#5f5c56; --paper:#fff; --ivory:#fbf8f3; --pink:#f7ebe4;
+  --w:900px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Serif JP",serif;color:var(--ink);background:#f1eee9;line-height:2;font-size:clamp(15px,2.1vw,18px);-webkit-font-smoothing:antialiased}
+main{max-width:var(--w);margin:0 auto;background:var(--paper);box-shadow:0 0 40px rgba(0,0,0,.06)}
+section{padding:clamp(48px,8vw,88px) clamp(20px,5vw,56px);text-align:center}
+p{margin:0 0 1.6em}
+p:last-child{margin-bottom:0}
+.lead{font-size:clamp(17px,2.6vw,22px);font-weight:700;line-height:1.9}
+.big{font-size:clamp(24px,5vw,40px);font-weight:700;line-height:1.5;letter-spacing:.04em}
+.mid{font-size:clamp(19px,3.2vw,26px);font-weight:700;line-height:1.7}
+.soft{color:var(--ink-l)}
+.gold{color:var(--gold)} .red{color:var(--red)} .green{color:var(--green)}
+.box{display:inline-block;border:1.5px solid var(--ink);padding:0 .3em;line-height:1.5}
+.rule{display:flex;align-items:center;gap:14px;margin:36px auto;max-width:520px;color:var(--gold)}
+.rule::before,.rule::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold-l),transparent)}
+.rule span{font-size:18px}
+/* 1 logo */
+.logos{display:flex;justify-content:center;align-items:center;gap:18px;padding:22px;font-size:13px;letter-spacing:.2em;color:var(--ink-l)}
+.logos b{font-weight:500;color:var(--ink)}
+/* 2-4 FV */
+.fv{position:relative;overflow:hidden;background:var(--ivory) url("bg/hero_silk.png") right top/cover no-repeat;text-align:left;padding-top:clamp(40px,8vw,80px);padding-bottom:clamp(60px,12vw,120px)}
+.fv::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(250,247,242,.96) 0%,rgba(250,247,242,.9) 55%,rgba(250,247,242,.15) 100%)}
+.fv>*{position:relative}
+.fv .dots{color:var(--ink);letter-spacing:.6em;font-size:14px;margin-bottom:6px}
+.fv .q{font-size:clamp(19px,4.6vw,38px);font-weight:700;line-height:1.55}
+.fv .who{margin:28px 0 22px;color:var(--ink-l);font-size:clamp(14px,2.2vw,18px);line-height:1.9;letter-spacing:.1em}
+.fv .catch{font-size:clamp(30px,6.2vw,52px);font-weight:700;line-height:1.35;color:var(--green)}
+.fv .catch em{font-style:normal;color:var(--gold)}
+/* 5 title plate */
+.plate{background:linear-gradient(135deg,#6f9a7d,#557f63);color:#fff;padding:clamp(36px,6vw,64px) 20px}
+.plate .name{font-size:clamp(22px,5.4vw,40px);font-weight:700;line-height:1.4;text-shadow:none}
+.plate .badge{display:inline-block;margin-top:22px;border:1.5px solid var(--gold-l);padding:10px 26px;font-size:clamp(15px,2.6vw,21px);letter-spacing:.14em;background:rgba(0,0,0,.12)}
+.plate .badge b{color:var(--gold-l);font-size:1.6em;font-weight:500}
+/* 6 CTA */
+.cta{padding:32px 20px}
+.btn{display:flex;align-items:center;justify-content:center;gap:14px;max-width:640px;margin:0 auto;padding:18px 22px;text-align:center;border-radius:999px;background:linear-gradient(180deg,#7ea88b,#5f8a6b);color:#fff;text-decoration:none;font-weight:700;font-size:clamp(17px,4vw,30px);border:3px solid #f1f5ef;box-shadow:0 10px 30px rgba(95,138,107,.3);line-height:1.3}
+.btn small{display:block;font-size:.6em;font-weight:500;letter-spacing:.1em}
+.btn .play{flex:none;width:58px;height:58px;border-radius:50%;background:#f1f5ef;color:var(--green-d);display:grid;place-items:center;font-size:24px}
+.btn:hover{transform:translateY(-2px)}
+/* 7 empathy list */
+.list{max-width:720px;margin:0 auto;text-align:left}
+.list .item{display:flex;align-items:center;gap:22px;background:#fff;border:1px solid #eee;box-shadow:0 6px 24px rgba(0,0,0,.05);padding:18px 24px;margin:14px 0}
+.list .num{font-family:Georgia,serif;font-size:40px;color:var(--gold);line-height:1;border-right:1px solid var(--gold-l);padding-right:20px;min-width:70px;text-align:center}
+.list .txt{font-size:clamp(15px,2.4vw,19px);line-height:1.8}
+/* 8 photo + voice */
+.voice{background:linear-gradient(180deg,#fff,#f3f1ec)}
+.voice .photo{width:min(100%,700px);aspect-ratio:4/3;margin:0 auto;background:linear-gradient(135deg,#e8e2d8,#cfd6d0);display:grid;place-items:center;color:#8a9088;font-size:13px;letter-spacing:.2em;}
+.voice img{width:min(100%,700px);aspect-ratio:4/3;object-fit:cover;box-shadow:0 12px 30px rgba(0,0,0,.18);margin-bottom:40px}
+/* 9 green band with arrow */
+.band{position:relative;background:linear-gradient(160deg,#6f9a7d,#557f63);color:#fff;padding-bottom:calc(clamp(48px,8vw,88px) + 30px)}
+.band::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:70px;background:var(--paper);clip-path:polygon(0 100%,50% 0,100% 100%)}
+.band .big{color:#fff}
+.band .big em{font-style:normal;color:var(--gold-l)}
+/* 12 pink band */
+.pink{background:var(--pink) url("bg/band_pink.png") center/cover;color:var(--green)}
+.pink .big{color:var(--green)}
+/* 13 diagram */
+.diagram{position:relative;width:min(100%,420px);aspect-ratio:1;margin:30px auto}
+.diagram .c{position:absolute;width:26%;aspect-ratio:1;border-radius:50%;border:2px solid var(--gold);background:#fff;display:grid;place-items:center;font-size:clamp(12px,2vw,15px);line-height:1.3;color:var(--ink);padding:4px;text-align:center}
+.diagram .c i{font-style:normal;display:block;font-size:1.5em;color:var(--gold);line-height:1.1}
+.diagram .center{width:36%;left:32%;top:32%;font-weight:700;font-size:clamp(14px,2.4vw,18px);background:var(--ivory)}
+.diagram .ring{position:absolute;inset:8%;border-radius:50%;border:1px dashed var(--gold-l)}
+.diagram .p1{left:37%;top:0} .diagram .p2{left:70%;top:17%} .diagram .p3{left:70%;top:57%} .diagram .p4{left:37%;top:74%} .diagram .p5{left:4%;top:57%} .diagram .p6{left:4%;top:17%}
+/* 14 points */
+.points{max-width:720px;margin:0 auto;text-align:left}
+.points .pt{display:flex;align-items:center;gap:20px;background:#fff;border-radius:6px;box-shadow:0 8px 28px rgba(0,0,0,.06);padding:20px 24px;margin:16px 0}
+.points .no{flex:none;width:58px;height:58px;border-radius:50%;background:var(--gold);color:#fff;display:grid;place-items:center;font-family:Georgia,serif;font-size:24px}
+.points .pt p{font-size:clamp(16px,2.6vw,21px);line-height:1.6;margin:0}
+/* 16 video */
+.video{max-width:720px;margin:30px auto;aspect-ratio:16/9;background:#000;box-shadow:0 12px 30px rgba(0,0,0,.2)}
+.video iframe{width:100%;height:100%;border:0}
+/* 19 steps */
+.steps{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:26px 0}
+.steps span{background:var(--ivory);border:1px solid var(--gold-l);padding:8px 18px;font-weight:700}
+.steps b{color:var(--gold);align-self:center}
+/* 20 profile */
+.profile{background:var(--ivory);text-align:left}
+.profile h2{text-align:center;font-size:clamp(18px,3vw,24px);letter-spacing:.2em;color:var(--green);margin-bottom:28px}
+.profile .name{font-size:clamp(22px,4vw,30px);font-weight:700;text-align:center;margin-bottom:4px}
+.profile .role{text-align:center;color:var(--ink-l);margin-bottom:24px;font-size:.95em}
+.profile p{font-size:clamp(14px,2.2vw,17px);line-height:2}
+footer{background:#e8efe8;color:#5b6a5e;font-size:12px;text-align:center;padding:26px 16px;line-height:2}
+footer a{color:#cfd6d0;margin:0 8px;text-decoration:none}
+.note{font-size:12px;color:var(--ink-l);line-height:1.8;margin-top:18px}
+@media (max-width:480px){.fv .q{font-size:18px}.band .soft,.pink .soft,section .soft{font-size:14px}.btn .play{width:44px;height:44px;font-size:18px}.plate .badge{font-size:13px;padding:8px 12px;letter-spacing:.06em}.plate .badge b{font-size:1.35em}.logos{font-size:12px;letter-spacing:.1em;gap:10px}section{padding-left:22px;padding-right:22px}.list .item{padding:14px 16px;gap:14px}.list .num{min-width:52px;font-size:30px;padding-right:12px}}
+.sp{display:none}@media (max-width:480px){.sp{display:inline}}
+
+/* accents (2026-09-12) */
+.kicker{display:inline-block;background:var(--green);color:#fff;font-size:12px;letter-spacing:.24em;padding:5px 16px;border-radius:999px;margin:0 0 22px;font-weight:500}
+.lead::after{content:"";display:block;width:40px;height:2px;background:var(--gold);margin:14px auto 0}
+.mid{color:var(--green-d)}
+section.alt{background:var(--ivory)}
+section+section{border-top:1px solid #ebe6dc}
+.band+section,.pink+section,.plate+section{border-top:0}
+.points .pt,.list .item{border-left:4px solid var(--green)}
+.profile{border-top:3px solid var(--green)!important}
+.pink{position:relative}.pink::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.42)}.pink>*{position:relative}
+@media (max-width:480px){.mid{font-size:18px}.lead{font-size:16px}}
+</style>
+</head>
+<body>
+<main>
+
+<!-- [1] ロゴ帯 -->
+<div class="logos"><b>なぎ</b><span>｜</span><span>やりたかった形にする右腕</span></div>
+
+<!-- [2][3][4] FV -->
+<section class="fv">
+  <div class="dots">・・・・</div>
+  <p class="q">忙しくなるほど、<br>なぜ <span class="box">大切な人に優しく</span> が<br><span class="box">できなくなる</span> のでしょうか。</p>
+  <p class="who">一人〜数人で事業を回している<br>経営者・個人事業主・講座主宰者の方へ</p>
+  <p class="catch">裏側の重さを、<br><em>まるっと</em>預けて<br>心に余裕を取り戻す。</p>
+</section>
+
+<!-- [5] タイトル板 -->
+<section class="plate">
+  <div class="name">やりたかった形にする右腕</div>
+  <!-- verify: 「月額制」の提供条件を確認 -->
+  <div class="badge">余裕を取り戻す、<br class="sp"><b>経営の裏側伴走</b></div>
+</section>
+
+<!-- [6] CTA① -->
+<div class="cta">
+  <!-- verify: 公式LINEのURLは未確認・後で差し替え -->
+  <a class="btn" href="https://lin.ee/qrrAMfT">まずは話を聞いてみる<small></small><span class="play">▶</span></a>
+</div>
+
+<!-- [7] 共感3つ -->
+<section>
+  <p class="kicker">はじめに</p>
+  <p class="lead">こんな日、ありませんか。</p>
+  <div class="list">
+    <div class="item"><div class="num">01</div><div class="txt">返信が遅れているのが気になって、<br>目の前の人の話が頭に入らない</div></div>
+    <div class="item"><div class="num">02</div><div class="txt">家族や仲間の何気ない一言に、<br>つい強く返してしまう</div></div>
+    <div class="item"><div class="num">03</div><div class="txt">「ごめん、また今度」が<br>口ぐせになっている</div></div>
+  </div>
+</section>
+
+<!-- [8] 心の声 -->
+<section class="voice">
+  <div class="photo" style="display:block;overflow:hidden"><img src="bg/photo.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+  <p class="soft">忙しいのは、頑張っている証拠です。</p>
+  <p class="mid">「<span class="red">今は余裕がないだけ</span>」<br>「<span class="red">落ち着いたら、ちゃんとする</span>」</p>
+  <p class="soft">そう言いながら、いちばん近くの人に<br>いちばん優しくできていない。<br>そんな夜はありませんか。</p>
+</section>
+
+<!-- [9] 緑帯（転換） -->
+<section class="band">
+  <p class="soft" style="color:#e4ede6">優しくできないのは、<br>あなたが冷たい人だからではありません。</p>
+  <p class="big">“<em>余裕をなくす形</em>”<br>になっているだけ</p>
+</section>
+
+<!-- [10] もう一つの悩み -->
+<section class="alt">
+  <p class="kicker">もうひとつ</p>
+  <p class="soft">そしてもうひとつ。<br>思い出してみてください。</p>
+  <p class="mid">本当は、いつでも笑顔で、<br>いつでも頼れる信頼関係で<br>お仕事をしたいと<br>思っていませんでしたか。</p>
+  <p class="mid">それは、いま実現できていますか。</p>
+  <p class="soft">余裕がなくなると、人に優しくできなくなる。<br>人に強く当たったあと、いちばん傷ついているのは自分です。<br>パンクしたときに壊れるのは、仕事より先に、人との関係です。</p>
+</section>
+
+<!-- [11] 解の提示 -->
+<section>
+  <p class="kicker">先に減らすもの</p>
+  <p>気持ちを切り替えようとしても、<br>やることの量が同じなら、<br>余裕は戻ってきません。</p>
+  <p class="lead">先に減らすのは「気持ちの負担」ではなく、<br>「気を張らなければいけない場所」の数です。</p>
+</section>
+
+<!-- [12] ピンク帯 -->
+<section class="pink">
+  <p class="big">「がんばり方」ではなく、<br>「抱える量」を変える。</p>
+  <div class="rule"><span>✦</span></div>
+  <p class="soft" style="color:var(--green)">経理も、システムも、顧客管理も。<br>あれもこれも気を張らなくて済むように、<br>裏側をひとつの土台として整えます。</p>
+</section>
+
+<!-- [13] 6要素図 -->
+<section>
+  <p class="kicker">できること</p>
+  <p class="lead">お任せいただける、事業の裏側</p>
+  <div class="diagram">
+    <div class="ring"></div>
+    <div class="c center">あなたの<br>事業</div>
+    <div class="c p1"><span><i>¥</i>経理・請求</span></div>
+    <div class="c p2"><span><i>⚙</i>顧客管理</span></div>
+    <div class="c p3"><span><i>☺</i>システム<br>設定</span></div>
+    <div class="c p4"><span><i>↻</i>配信・告知</span></div>
+    <div class="c p5"><span><i>✎</i>イベント<br>運営</span></div>
+    <div class="c p6"><span><i>✦</i>日々の事務</span></div>
+  </div>
+  <p class="mid">あなたのその重たいものを<br>手放すだけで、<br>何が手に入りますか。</p>
+</section>
+
+<!-- [14] 3ポイント -->
+<section style="padding-top:0">
+  <div class="points">
+    <div class="pt"><div class="no">01</div><p>目の前の人に、ちゃんと向き合える時間が戻る</p></div>
+    <div class="pt"><div class="no">02</div><p>自分が動かなくても止まらない、崩れない土台ができる</p></div>
+    <div class="pt"><div class="no">03</div><p>「また今度」と言わなくて済む日が増える</p></div>
+  </div>
+</section>
+
+<!-- [15] 哲学 -->
+<section>
+  <p class="kicker">なぜ、この仕事か</p>
+  <p class="mid">「効率化のため」では、ありません。</p>
+  <div class="rule"><span>✦</span></div>
+  <p>私自身、一度、全部を一人で背負って潰れたことがあります。<br>答えが見えているからと全部自分でやり、<br>気づいたら、人に優しくする余裕が残っていませんでした。</p>
+  <p>会社員時代の経理・総務、4年の介護。<br>どちらも「余裕がない人のそばにいる」仕事でした。<br>だから、余裕をなくしていく人の気持ちが、他人事ではありません。</p>
+  <p class="red" style="font-weight:700">優しさは、性格ではなく、余裕から生まれる。<br>その余裕を、裏側から作りたいのです。</p>
+</section>
+
+<!-- [16] 画像（動画ができたら .video の iframe に戻す） -->
+<section style="background:var(--ivory)">
+  <p class="kicker">戻ってくる時間</p>
+  <p class="lead">裏側が回りはじめたら、<br>こんな時間が戻ってきます</p>
+  <div class="video" style="background:none;aspect-ratio:16/9;overflow:hidden"><img src="bg/after.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+  <p class="mid">大切な人を笑顔にできる。<br>そんな幸せを、届けたい。</p>
+  <p class="soft">そういう幸せな人を、<br>ひとりずつ増やしていきたい。<br>そのために、裏側を引き受けています。</p>
+</section>
+
+<!-- [17] 目指す姿 -->
+<section>
+  <p class="kicker">お渡しするもの</p>
+  <p class="soft">お渡しするのは、<br>「作業を代わりにやる人」ではありません</p>
+  <p class="big green">あなたの余裕を、<br>隣で守り続ける右腕</p>
+  <p>立ち上げのときだけ厚く入り、<br>回り始めたら薄くする。<br>あなたがいなくても回る形に、順番に整えていきます。</p>
+  <p class="soft">そのあいだ、あなたの事業の話を、たくさん聞かせてください。<br>それが私の、いちばんの楽しみです。</p>
+</section>
+
+<!-- [18] 向いていない人・位置づけ -->
+<section style="background:var(--ivory)">
+  <p class="kicker">向いている人・いない人</p>
+  <p class="lead">こんな方には、向いていません</p>
+  <p>・作業を一度だけ外注して終わりにしたい方<br>・数字や顧客情報を、誰にも見せたくない方<br>・「今すぐ売上を◯倍に」を求めている方<br>・忙しさそのものを、誇りとして手放したくない方</p>
+  <div class="rule"><span>✦</span></div>
+  <p class="lead">こんな方のためのサービスです</p>
+  <p>・仕事は好きだけれど、最近、人に当たってしまう自分が嫌になっている<br>・経理や顧客管理を頼める人がいない<br>・忙しすぎて、いちばん重い1本だけでも先に片づけたい</p>
+</section>
+
+<!-- [19] やり方 -->
+<section>
+  <p class="kicker">進め方と料金</p>
+  <p class="lead">余裕を取り戻す、4つのステップ</p>
+  <div class="steps"><span>何に時間と気を奪われているかを、一緒に見える化する</span><b>→</b><span>いちばん重い1本を先に片づける</span><b>→</b><span>くり返す作業を型にして、AIと自動化に載せ替える</span><b>→</b><span>残りは右腕として、隣で回し続ける</span></div>
+  <!-- verify: 月額3万円〜20万円は既存LP由来。価格を確認 -->
+  <p class="mid">月額 <span class="gold">3万円 〜 20万円</span></p>
+  <!-- verify: 半日スポット5万円は既存LP由来。価格を確認 -->
+  <p class="soft">業務の深さ・範囲・時間・量に応じて設計します。<br>まずは半日のスポット（5万円）で1本片づける入口もあります。</p>
+</section>
+
+<!-- [20] CTA② -->
+<section id="form" style="background:var(--ivory)">
+  <p class="kicker">まずは、ここから</p>
+  <p class="lead">「こんなつもりじゃなかった」になる前に、<br>言ってもらえたら、うれしいです。</p>
+  <p>やりたかったことを、<br>やりたかったように、<br>やりたかった形で。</p>
+  <p>そのために、裏側を整えます。<br>大きな決断は要りません。<br>まずは「何に気を張り続けているか」を、<br>一緒にやさしく見える化するところから。</p>
+  <!-- verify: 公式LINE・お問い合わせフォームのURLは未確認 -->
+  <div class="cta"><a class="btn" href="https://lin.ee/qrrAMfT">まずは話を聞いてみる<small></small><span class="play">▶</span></a></div>
+  <p class="note">※ボタンを押すと、なぎの公式LINEの友だち追加画面が開きます。</p>
+</section>
+
+<!-- 代表紹介 -->
+<section class="profile">
+  <h2>ご紹介</h2>
+  <p class="name">なぎ</p>
+  <p class="role">やりたかった形にする右腕｜経理・システム・顧客管理の伴走</p>
+  <!-- verify: 経理・総務・労務5年、介護4年は既存LP由来。年数を本人確認 -->
+  <p>会社員として経理・総務・労務を5年、介護を4年。その後フリーランスとして、数字・顧客・システムの管理や、コミュニティ・イベントの運営サポートを重ねてきました。華やかな経歴ではありませんが、事業の裏側は現場で体に入っています。</p>
+  <p>大事にしているのは、相手の主体性を奪わないこと。答えが見えていても渡さず、自分がいなくても回る形を作ります。裏側を引き受けるのは、その人が本来向き合いたい人と仕事に、穏やかに向き合えるようにするためです。</p>
+  <p>この仕事の楽しみは、裏側を整えることそのものより、その過程でいろいろな人の人生の話を聞けること、そこから学べることにあります。ひとつの事業には、ひとりの人生があります。それを聞かせてもらえるのが、正直、うれしいのです。<br>素敵なことをしている人が、余裕を失って止まってしまうのはもったいない。そういう人たちを、裏側から応援したいと思っています。</p>
+  <p>このサービスのために、これからも勉強を続けていきます。分からないことは分からないと言います。</p>
+</section>
+
+<footer>
+  © 2026 なぎ｜やりたかった形にする右腕
+</footer>
+
+</main>
+</body>
+</html>
