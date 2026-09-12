@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>なぎ｜やりたかった形にする右腕</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --green:#5f8a6b; --green-d:#4a6f55; --sage:#8fb39a; --gold:#b89a5a; --gold-l:#e3d5b0; --red:#b0604a;
-  --ink:#2e2d2a; --ink-l:#5f5c56; --paper:#fff; --ivory:#fbf8f3; --pink:#f7ebe4;
+  --green:#b86f58; --green-d:#9a5844; --sage:#d9b9ad; --gold:#b86f58; --gold-l:#e9cfc6; --red:#b86f58; --cream:#f7f0e3; --cream-d:#eee2d0;
+  --ink:#3f3934; --ink-l:#766c63; --paper:#fdfaf5; --ivory:#f7f0e3; --pink:#eee2d0;
   --w:900px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:"Noto Serif JP",serif;color:var(--ink);background:#f1eee9;line-height:2;font-size:clamp(15px,2.1vw,18px);-webkit-font-smoothing:antialiased}
+body{font-family:"Noto Sans JP","Hiragino Sans",sans-serif;font-feature-settings:"palt" 1;color:var(--ink);background:#e6dccd;line-height:1.9;font-size:clamp(15px,2.1vw,18px);-webkit-font-smoothing:antialiased}
 main{max-width:var(--w);margin:0 auto;background:var(--paper);box-shadow:0 0 40px rgba(0,0,0,.06)}
 section{padding:clamp(48px,8vw,88px) clamp(20px,5vw,56px);text-align:center}
 p{margin:0 0 1.6em}
@@ -24,7 +24,7 @@ p:last-child{margin-bottom:0}
 .mid{font-size:clamp(19px,3.2vw,26px);font-weight:700;line-height:1.7}
 .soft{color:var(--ink-l)}
 .gold{color:var(--gold)} .red{color:var(--red)} .green{color:var(--green)}
-.box{display:inline-block;border:1.5px solid var(--ink);padding:0 .3em;line-height:1.5}
+.box{display:inline-block;background:var(--green);color:#fff;padding:0 .35em;line-height:1.5;border-radius:4px}
 .rule{display:flex;align-items:center;gap:14px;margin:36px auto;max-width:520px;color:var(--gold)}
 .rule::before,.rule::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold-l),transparent)}
 .rule span{font-size:18px}
@@ -32,7 +32,7 @@ p:last-child{margin-bottom:0}
 .logos{display:flex;justify-content:center;align-items:center;gap:18px;padding:22px;font-size:13px;letter-spacing:.2em;color:var(--ink-l)}
 .logos b{font-weight:500;color:var(--ink)}
 /* 2-4 FV */
-.fv{position:relative;overflow:hidden;background:var(--ivory) url("bg/hero_silk.png") right top/cover no-repeat;text-align:left;padding-top:clamp(40px,8vw,80px);padding-bottom:clamp(60px,12vw,120px)}
+.fv{position:relative;overflow:hidden;background:var(--ivory);text-align:left;padding-top:clamp(40px,8vw,80px);padding-bottom:clamp(60px,12vw,120px)}
 .fv::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(250,247,242,.96) 0%,rgba(250,247,242,.9) 55%,rgba(250,247,242,.15) 100%)}
 .fv>*{position:relative}
 .fv .dots{color:var(--ink);letter-spacing:.6em;font-size:14px;margin-bottom:6px}
@@ -41,15 +41,15 @@ p:last-child{margin-bottom:0}
 .fv .catch{font-size:clamp(30px,6.2vw,52px);font-weight:700;line-height:1.35;color:var(--green)}
 .fv .catch em{font-style:normal;color:var(--gold)}
 /* 5 title plate */
-.plate{background:linear-gradient(135deg,#6f9a7d,#557f63);color:#fff;padding:clamp(36px,6vw,64px) 20px}
+.plate{background:var(--green);color:#fff;padding:clamp(36px,6vw,64px) 20px}
 .plate .name{font-size:clamp(22px,5.4vw,40px);font-weight:700;line-height:1.4;text-shadow:none}
 .plate .badge{display:inline-block;margin-top:22px;border:1.5px solid var(--gold-l);padding:10px 26px;font-size:clamp(15px,2.6vw,21px);letter-spacing:.14em;background:rgba(0,0,0,.12)}
 .plate .badge b{color:var(--gold-l);font-size:1.6em;font-weight:500}
 /* 6 CTA */
 .cta{padding:32px 20px}
-.btn{display:flex;align-items:center;justify-content:center;gap:14px;max-width:640px;margin:0 auto;padding:18px 22px;text-align:center;border-radius:999px;background:linear-gradient(180deg,#7ea88b,#5f8a6b);color:#fff;text-decoration:none;font-weight:700;font-size:clamp(17px,4vw,30px);border:3px solid #f1f5ef;box-shadow:0 10px 30px rgba(95,138,107,.3);line-height:1.3}
+.btn{display:flex;align-items:center;justify-content:center;gap:14px;max-width:640px;margin:0 auto;padding:18px 22px;text-align:center;border-radius:999px;background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:clamp(17px,4vw,28px);border:3px solid #fff;box-shadow:0 10px 30px rgba(184,111,88,.3);line-height:1.3}
 .btn small{display:block;font-size:.6em;font-weight:500;letter-spacing:.1em}
-.btn .play{flex:none;width:58px;height:58px;border-radius:50%;background:#f1f5ef;color:var(--green-d);display:grid;place-items:center;font-size:24px}
+.btn .play{flex:none;width:58px;height:58px;border-radius:50%;background:#fff;color:var(--green);display:grid;place-items:center;font-size:24px}
 .btn:hover{transform:translateY(-2px)}
 /* 7 empathy list */
 .list{max-width:720px;margin:0 auto;text-align:left}
@@ -57,16 +57,16 @@ p:last-child{margin-bottom:0}
 .list .num{font-family:Georgia,serif;font-size:40px;color:var(--gold);line-height:1;border-right:1px solid var(--gold-l);padding-right:20px;min-width:70px;text-align:center}
 .list .txt{font-size:clamp(15px,2.4vw,19px);line-height:1.8}
 /* 8 photo + voice */
-.voice{background:linear-gradient(180deg,#fff,#f3f1ec)}
+.voice{background:var(--paper)}
 .voice .photo{width:min(100%,700px);aspect-ratio:4/3;margin:0 auto;background:linear-gradient(135deg,#e8e2d8,#cfd6d0);display:grid;place-items:center;color:#8a9088;font-size:13px;letter-spacing:.2em;}
 .voice img{width:min(100%,700px);aspect-ratio:4/3;object-fit:cover;box-shadow:0 12px 30px rgba(0,0,0,.18);margin-bottom:40px}
 /* 9 green band with arrow */
-.band{position:relative;background:linear-gradient(160deg,#6f9a7d,#557f63);color:#fff;padding-bottom:calc(clamp(48px,8vw,88px) + 30px)}
+.band{position:relative;background:var(--green);color:#fff;padding-bottom:calc(clamp(48px,8vw,88px) + 30px)}
 .band::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:70px;background:var(--paper);clip-path:polygon(0 100%,50% 0,100% 100%)}
 .band .big{color:#fff}
 .band .big em{font-style:normal;color:var(--gold-l)}
 /* 12 pink band */
-.pink{background:var(--pink) url("bg/band_pink.png") center/cover;color:var(--green)}
+.pink{background:var(--pink);color:var(--green)}
 .pink .big{color:var(--green)}
 /* 13 diagram */
 .diagram{position:relative;width:min(100%,420px);aspect-ratio:1;margin:30px auto}
@@ -93,7 +93,7 @@ p:last-child{margin-bottom:0}
 .profile .name{font-size:clamp(22px,4vw,30px);font-weight:700;text-align:center;margin-bottom:4px}
 .profile .role{text-align:center;color:var(--ink-l);margin-bottom:24px;font-size:.95em}
 .profile p{font-size:clamp(14px,2.2vw,17px);line-height:2}
-footer{background:#e8efe8;color:#5b6a5e;font-size:12px;text-align:center;padding:26px 16px;line-height:2}
+footer{background:var(--cream-d);color:var(--ink-l);font-size:12px;text-align:center;padding:26px 16px;line-height:2}
 footer a{color:#cfd6d0;margin:0 8px;text-decoration:none}
 .note{font-size:12px;color:var(--ink-l);line-height:1.8;margin-top:18px}
 @media (max-width:480px){.fv .q{font-size:18px}.band .soft,.pink .soft,section .soft{font-size:14px}.btn .play{width:44px;height:44px;font-size:18px}.plate .badge{font-size:13px;padding:8px 12px;letter-spacing:.06em}.plate .badge b{font-size:1.35em}.logos{font-size:12px;letter-spacing:.1em;gap:10px}section{padding-left:22px;padding-right:22px}.list .item{padding:14px 16px;gap:14px}.list .num{min-width:52px;font-size:30px;padding-right:12px}}
@@ -101,15 +101,19 @@ footer a{color:#cfd6d0;margin:0 8px;text-decoration:none}
 
 /* accents (2026-09-12) */
 .kicker{display:inline-block;background:var(--green);color:#fff;font-size:12px;letter-spacing:.24em;padding:5px 16px;border-radius:999px;margin:0 0 22px;font-weight:500}
-.lead::after{content:"";display:block;width:40px;height:2px;background:var(--gold);margin:14px auto 0}
+.lead::after{content:"";display:block;width:44px;height:3px;background:var(--green);margin:14px auto 0}
 .mid{color:var(--green-d)}
 section.alt{background:var(--ivory)}
 section+section{border-top:1px solid #ebe6dc}
 .band+section,.pink+section,.plate+section{border-top:0}
 .points .pt,.list .item{border-left:4px solid var(--green)}
 .profile{border-top:3px solid var(--green)!important}
-.pink{position:relative}.pink::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.42)}.pink>*{position:relative}
+.pink{position:relative}
 @media (max-width:480px){.mid{font-size:18px}.lead{font-size:16px}}
+.big,.mid,.lead,.fv .catch,.plate .name{letter-spacing:.02em}
+.fv .q{font-weight:700}
+.list .item,.points .pt{border-radius:10px;background:#fff}
+.profile{background:var(--ivory)}
 </style>
 </head>
 <body>
@@ -184,7 +188,7 @@ section+section{border-top:1px solid #ebe6dc}
 <section class="pink">
   <p class="big">「がんばり方」ではなく、<br>「抱える量」を変える。</p>
   <div class="rule"><span>✦</span></div>
-  <p class="soft" style="color:var(--green)">経理も、システムも、顧客管理も。<br>あれもこれも気を張らなくて済むように、<br>裏側をひとつの土台として整えます。</p>
+  <p style="color:var(--ink)">経理も、システムも、顧客管理も。<br>あれもこれも気を張らなくて済むように、<br>裏側をひとつの土台として整えます。</p>
 </section>
 
 <!-- [13] 6要素図 -->
