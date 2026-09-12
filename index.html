@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --green:#b86f58; --green-d:#9a5844; --sage:#d9b9ad; --gold:#b86f58; --gold-l:#e9cfc6; --red:#b86f58; --cream:#f7f0e3; --cream-d:#eee2d0;
+  --green:#b86f58; --green-d:#9a5844; --sage:#7d9b80; --gold:#b86f58; --gold-l:#e9cfc6; --red:#b86f58; --cream:#f7f0e3; --cream-d:#eee2d0;
   --ink:#3f3934; --ink-l:#766c63; --paper:#fdfaf5; --ivory:#f7f0e3; --pink:#eee2d0;
   --w:900px;
 }
@@ -32,7 +32,7 @@ p:last-child{margin-bottom:0}
 .logos{display:flex;justify-content:center;align-items:center;gap:18px;padding:22px;font-size:13px;letter-spacing:.2em;color:var(--ink-l)}
 .logos b{font-weight:500;color:var(--ink)}
 /* 2-4 FV */
-.fv{position:relative;overflow:hidden;background:var(--ivory);text-align:left;padding-top:clamp(40px,8vw,80px);padding-bottom:clamp(60px,12vw,120px)}
+.fv{position:relative;overflow:hidden;background:var(--ivory) url("bg/leaf_corner_a.png") right -10px top -10px/min(78%,560px) no-repeat;text-align:left;padding-top:clamp(40px,8vw,80px);padding-bottom:clamp(60px,12vw,120px)}
 .fv::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(250,247,242,.96) 0%,rgba(250,247,242,.9) 55%,rgba(250,247,242,.15) 100%)}
 .fv>*{position:relative}
 .fv .dots{color:var(--ink);letter-spacing:.6em;font-size:14px;margin-bottom:6px}
@@ -101,19 +101,21 @@ footer a{color:#cfd6d0;margin:0 8px;text-decoration:none}
 
 /* accents (2026-09-12) */
 .kicker{display:inline-block;background:var(--green);color:#fff;font-size:12px;letter-spacing:.24em;padding:5px 16px;border-radius:999px;margin:0 0 22px;font-weight:500}
-.lead::after{content:"";display:block;width:44px;height:3px;background:var(--green);margin:14px auto 0}
+.lead::after{content:"";display:block;width:44px;height:3px;background:var(--sage);margin:14px auto 0}
 .mid{color:var(--green-d)}
 section.alt{background:var(--ivory)}
 section+section{border-top:1px solid #ebe6dc}
 .band+section,.pink+section,.plate+section{border-top:0}
-.points .pt,.list .item{border-left:4px solid var(--green)}
-.profile{border-top:3px solid var(--green)!important}
+.points .pt,.list .item{border-left:4px solid var(--sage)}
+.profile{border-top:3px solid var(--sage)!important}
 .pink{position:relative}
 @media (max-width:480px){.mid{font-size:18px}.lead{font-size:16px}}
 .big,.mid,.lead,.fv .catch,.plate .name{letter-spacing:.02em}
 .fv .q{font-weight:700}
 .list .item,.points .pt{border-radius:10px;background:#fff}
 .profile{background:var(--ivory)}
+.sprig{display:block;width:min(56%,280px);margin:4px auto 18px}
+.leaf-tr{position:relative;overflow:hidden}.leaf-tr::before{content:"";position:absolute;right:-10px;top:-10px;width:min(80%,460px);aspect-ratio:1;background:url("bg/leaf_corner_a.png") right top/cover no-repeat;opacity:.85;pointer-events:none}.leaf-tr>*{position:relative}
 </style>
 </head>
 <body>
@@ -187,7 +189,7 @@ section+section{border-top:1px solid #ebe6dc}
 <!-- [12] ピンク帯 -->
 <section class="pink">
   <p class="big">「がんばり方」ではなく、<br>「抱える量」を変える。</p>
-  <div class="rule"><span>✦</span></div>
+  <img class="sprig" src="bg/leaf_sprig_a.png" alt="">
   <p style="color:var(--ink)">経理も、システムも、顧客管理も。<br>あれもこれも気を張らなくて済むように、<br>裏側をひとつの土台として整えます。</p>
 </section>
 
@@ -221,7 +223,7 @@ section+section{border-top:1px solid #ebe6dc}
 <section>
   <p class="kicker">なぜ、この仕事か</p>
   <p class="mid">「効率化のため」では、ありません。</p>
-  <div class="rule"><span>✦</span></div>
+  <img class="sprig" src="bg/leaf_sprig_a.png" alt="">
   <p>私自身、一度、全部を一人で背負って潰れたことがあります。<br>答えが見えているからと全部自分でやり、<br>気づいたら、人に優しくする余裕が残っていませんでした。</p>
   <p>会社員時代の経理・総務、4年の介護。<br>どちらも「余裕がない人のそばにいる」仕事でした。<br>だから、余裕をなくしていく人の気持ちが、他人事ではありません。</p>
   <p class="red" style="font-weight:700">優しさは、性格ではなく、余裕から生まれる。<br>その余裕を、裏側から作りたいのです。</p>
@@ -237,7 +239,7 @@ section+section{border-top:1px solid #ebe6dc}
 </section>
 
 <!-- [17] 目指す姿 -->
-<section>
+<section class="leaf-tr">
   <p class="kicker">お渡しするもの</p>
   <p class="soft">お渡しするのは、<br>「作業を代わりにやる人」ではありません</p>
   <p class="big green">あなたの余裕を、<br>隣で守り続ける右腕</p>
@@ -250,7 +252,7 @@ section+section{border-top:1px solid #ebe6dc}
   <p class="kicker">向いている人・いない人</p>
   <p class="lead">こんな方には、向いていません</p>
   <p>・作業を一度だけ外注して終わりにしたい方<br>・数字や顧客情報を、誰にも見せたくない方<br>・「今すぐ売上を◯倍に」を求めている方<br>・忙しさそのものを、誇りとして手放したくない方</p>
-  <div class="rule"><span>✦</span></div>
+  <img class="sprig" src="bg/leaf_sprig_a.png" alt="">
   <p class="lead">こんな方のためのサービスです</p>
   <p>・仕事は好きだけれど、最近、人に当たってしまう自分が嫌になっている<br>・経理や顧客管理を頼める人がいない<br>・忙しすぎて、いちばん重い1本だけでも先に片づけたい</p>
 </section>
@@ -278,7 +280,7 @@ section+section{border-top:1px solid #ebe6dc}
 </section>
 
 <!-- 代表紹介 -->
-<section class="profile">
+<section class="profile leaf-tr">
   <h2>ご紹介</h2>
   <p class="name">なぎ</p>
   <p class="role">やりたかった形にする右腕｜経理・システム・顧客管理の伴走</p>
