@@ -32,8 +32,8 @@ p:last-child{margin-bottom:0}
 .logos{display:flex;justify-content:center;align-items:center;gap:18px;padding:22px;font-size:13px;letter-spacing:.2em;color:var(--ink-l)}
 .logos b{font-weight:500;color:var(--ink)}
 /* 2-4 FV */
-.fv{position:relative;overflow:hidden;background:var(--ivory) url("bg/leaf_corner_a.png") right -10px top -10px/min(78%,560px) no-repeat;text-align:left;padding-top:clamp(40px,8vw,80px);padding-bottom:clamp(60px,12vw,120px)}
-.fv::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(250,247,242,.96) 0%,rgba(250,247,242,.9) 55%,rgba(250,247,242,.15) 100%)}
+.fv{position:relative;overflow:hidden;background-color:var(--ivory);background:url("bg/leaf_corner_a.png") right -10px top -10px/min(78%,560px) no-repeat,url("bg/leaf_bl_a.png") left -20px bottom -20px/min(55%,380px) no-repeat var(--ivory);text-align:left;padding-top:clamp(40px,8vw,80px);padding-bottom:clamp(60px,12vw,120px)}
+.fv::before{content:none}
 .fv>*{position:relative}
 .fv .dots{color:var(--ink);letter-spacing:.6em;font-size:14px;margin-bottom:6px}
 .fv .q{font-size:clamp(19px,4.6vw,38px);font-weight:700;line-height:1.55}
@@ -114,8 +114,8 @@ section+section{border-top:1px solid #ebe6dc}
 .fv .q{font-weight:700}
 .list .item,.points .pt{border-radius:10px;background:#fff}
 .profile{background:var(--ivory)}
-.sprig{display:block;width:min(56%,280px);margin:4px auto 18px}
-.leaf-tr{position:relative;overflow:hidden}.leaf-tr::before{content:"";position:absolute;right:-10px;top:-10px;width:min(80%,460px);aspect-ratio:1;background:url("bg/leaf_corner_a.png") right top/cover no-repeat;opacity:.85;pointer-events:none}.leaf-tr>*{position:relative}
+.sprig{display:block;width:min(92%,520px);margin:0 auto 14px}
+.leaf-tr,.leaf-bl{position:relative;overflow:hidden}.leaf-tr::before{content:"";position:absolute;right:-10px;top:-10px;width:min(70%,420px);aspect-ratio:1;background:url("bg/leaf_corner_a.png") right top/contain no-repeat;pointer-events:none}.leaf-bl::before{content:"";position:absolute;left:-10px;bottom:-10px;width:min(60%,380px);aspect-ratio:1;background:url("bg/leaf_bl_a.png") left bottom/contain no-repeat;pointer-events:none}.leaf-tr>*,.leaf-bl>*{position:relative}
 </style>
 </head>
 <body>
@@ -180,7 +180,7 @@ section+section{border-top:1px solid #ebe6dc}
 </section>
 
 <!-- [11] 解の提示 -->
-<section>
+<section class="leaf-bl">
   <p class="kicker">先に減らすもの</p>
   <p>気持ちを切り替えようとしても、<br>やることの量が同じなら、<br>余裕は戻ってきません。</p>
   <p class="lead">先に減らすのは「気持ちの負担」ではなく、<br>「気を張らなければいけない場所」の数です。</p>
@@ -194,7 +194,7 @@ section+section{border-top:1px solid #ebe6dc}
 </section>
 
 <!-- [13] 6要素図 -->
-<section>
+<section class="leaf-tr">
   <p class="kicker">できること</p>
   <p class="lead">お任せいただける、事業の裏側</p>
   <div class="diagram">
@@ -269,7 +269,7 @@ section+section{border-top:1px solid #ebe6dc}
 </section>
 
 <!-- [20] CTA② -->
-<section id="form" style="background:var(--ivory)">
+<section id="form" style="background:var(--ivory)" class="leaf-bl">
   <p class="kicker">まずは、ここから</p>
   <p class="lead">「こんなつもりじゃなかった」になる前に、<br>言ってもらえたら、うれしいです。</p>
   <p>やりたかったことを、<br>やりたかったように、<br>やりたかった形で。</p>
