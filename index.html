@@ -298,5 +298,33 @@ section+section{border-top:1px solid #ebe6dc}
 </footer>
 
 </main>
+<!--
+  AI窓口のチャットボタン（ホームページの </body> の直前に貼る）
+  https://script.google.com/macros/s/AKfycbxaiy0rt_qz6667HQSgN1RE9itx2R-2BYawisCKmI_-OOf91sIoL6VrC7cBB_QwG2M2Lg/exec を Apps Script のウェブアプリURL（…/exec）に置き換える。
+  右下に「質問する」ボタンが出て、押すとチャットが開く。
+-->
+<style>
+  #aiw-btn { position:fixed; right:16px; bottom:16px; z-index:9999; border:0; border-radius:999px; padding:12px 18px;
+    background:#b86f58; color:#fff; font:600 15px/1 "Noto Sans JP", sans-serif; box-shadow:0 4px 14px rgba(0,0,0,.18); cursor:pointer; }
+  #aiw-box { position:fixed; right:16px; bottom:76px; z-index:9999; width:min(380px, calc(100vw - 32px)); height:min(560px, calc(100vh - 110px)); height:min(560px, calc(100dvh - 110px));
+    border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.22); background:#f7f0e3; display:none; }
+  #aiw-box iframe { width:100%; height:100%; border:0; }
+  #aiw-box.open { display:block; }
+</style>
+<button id="aiw-btn" type="button" aria-expanded="false">質問する</button>
+<div id="aiw-box" role="dialog" aria-label="AIのお問い合わせ窓口"></div>
+<script>
+  (function () {
+    var URL = 'https://script.google.com/macros/s/AKfycbxaiy0rt_qz6667HQSgN1RE9itx2R-2BYawisCKmI_-OOf91sIoL6VrC7cBB_QwG2M2Lg/exec';
+    var btn = document.getElementById('aiw-btn'), box = document.getElementById('aiw-box');
+    btn.addEventListener('click', function () {
+      if (!box.firstChild) { var f = document.createElement('iframe'); f.src = URL; f.title = 'AIのお問い合わせ窓口'; box.appendChild(f); }
+      var open = box.classList.toggle('open');
+      btn.textContent = open ? '閉じる' : '質問する';
+      btn.setAttribute('aria-expanded', open);
+    });
+  })();
+</script>
+
 </body>
 </html>
